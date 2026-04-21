@@ -7,141 +7,7 @@
   <style>
     }
 </script>
-    body 
-    <!-- 💬 FLOATING CHAT BUTTON -->
-<div id="chatToggle" onclick="toggleChat()">💬</div>
-
-<div id="chatContainer">
-  <div class="chat-header">
-    Jamilla Bot 💖
-    <span onclick="toggleChat()">✕</span>
-  </div>
-
-  <div id="chatMessages"></div>
-
-  <div class="chat-input">
-    <input id="chatInput" type="text" placeholder="Type a message...">
-    <button onclick="sendMessage()">➤</button>
-  </div>
-</div>
-
-<style>
-#chatToggle{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:pink;
-  color:black;
-  width:55px;
-  height:55px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:22px;
-  cursor:pointer;
-  box-shadow:0 6px 18px rgba(0,0,0,0.4);
-  z-index:999;
-}
-
-#chatContainer{
-  position:fixed;
-  bottom:90px;
-  right:20px;
-  width:300px;
-  background:#111;
-  border-radius:12px;
-  display:none;
-  flex-direction:column;
-  overflow:hidden;
-  box-shadow:0 10px 30px rgba(0,0,0,0.6);
-  z-index:999;
-}
-
-.chat-header{
-  background:pink;
-  color:black;
-  padding:10px;
-  font-weight:600;
-  display:flex;
-  justify-content:space-between;
-}
-
-#chatMessages{
-  height:220px;
-  overflow-y:auto;
-  padding:10px;
-  font-size:13px;
-}
-
-.chat-input{
-  display:flex;
-}
-
-.chat-input input{
-  flex:1;
-  padding:8px;
-  border:none;
-  outline:none;
-}
-
-.chat-input button{
-  background:pink;
-  border:none;
-  padding:8px 12px;
-  cursor:pointer;
-}
-</style>
-
-<script>
-function toggleChat(){
-  const chat = document.getElementById("chatContainer");
-  chat.style.display = chat.style.display === "flex" ? "none" : "flex";
-}
-
-function getBotReply(message){
-  message = message.toLowerCase();
-
-  if(message.includes("hi") || message.includes("hello")){
-    return "Hi! 💖 Welcome to my portfolio!";
-  }
-  if(message.includes("name")){
-    return "I'm Jamilla Bot 🤖";
-  }
-  if(message.includes("project")){
-    return "Check my projects section above ✨";
-  }
-  if(message.includes("resume")){
-    return "You can view my resume below 📄";
-  }
-  if(message.includes("contact")){
-    return "Email me at jamillasiason4@gmail.com 📩";
-  }
-
-  return "Thanks for your message 😊";
-}
-
-function sendMessage(){
-  const input = document.getElementById("chatInput");
-  const msgBox = document.getElementById("chatMessages");
-
-  if(input.value.trim() === "") return;
-
-  const userMsg = document.createElement("div");
-  userMsg.textContent = "You: " + input.value;
-  msgBox.appendChild(userMsg);
-
-  const reply = document.createElement("div");
-  reply.textContent = "Bot: " + getBotReply(input.value);
-  reply.style.color = "pink";
-
-  setTimeout(() => {
-    msgBox.appendChild(reply);
-    msgBox.scrollTop = msgBox.scrollHeight;
-  }, 500);
-
-  input.value = "";
-}
+    body }
 </script>
     { 
       margin:0; 
@@ -367,6 +233,142 @@ function sendMessage(){
     <p>Number: 09927181384
     </p>
   </section>
+  <body> <!-- 💬 FLOATING CHAT BUTTON -->
+<div id="chatToggle" onclick="toggleChat()">💬</div>
+
+<div id="chatContainer">
+  <div class="chat-header">
+    Jamilla Bot 💖
+    <span onclick="toggleChat()">✕</span>
+  </div>
+
+  <div id="chatMessages"></div>
+
+  <div class="chat-input">
+    <input id="chatInput" type="text" placeholder="Type a message...">
+    <button onclick="sendMessage()">➤</button>
+  </div>
+</div>
+
+<style>
+#chatToggle{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:pink;
+  color:black;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  cursor:pointer;
+  box-shadow:0 6px 18px rgba(0,0,0,0.4);
+  z-index:999;
+}
+
+#chatContainer{
+  position:fixed;
+  bottom:90px;
+  right:20px;
+  width:300px;
+  background:#111;
+  border-radius:12px;
+  display:none;
+  flex-direction:column;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+  z-index:999;
+}
+
+.chat-header{
+  background:pink;
+  color:black;
+  padding:10px;
+  font-weight:600;
+  display:flex;
+  justify-content:space-between;
+}
+
+#chatMessages{
+  height:220px;
+  overflow-y:auto;
+  padding:10px;
+  font-size:13px;
+}
+
+.chat-input{
+  display:flex;
+}
+
+.chat-input input{
+  flex:1;
+  padding:8px;
+  border:none;
+  outline:none;
+}
+
+.chat-input button{
+  background:pink;
+  border:none;
+  padding:8px 12px;
+  cursor:pointer;
+}
+</style>
+
+<script>
+function toggleChat(){
+  const chat = document.getElementById("chatContainer");
+  chat.style.display = chat.style.display === "flex" ? "none" : "flex";
+}
+
+function getBotReply(message){
+  message = message.toLowerCase();
+
+  if(message.includes("hi") || message.includes("hello")){
+    return "Hi! 💖 Welcome to my portfolio!";
+  }
+  if(message.includes("name")){
+    return "I'm Jamilla Bot 🤖";
+  }
+  if(message.includes("project")){
+    return "Check my projects section above ✨";
+  }
+  if(message.includes("resume")){
+    return "You can view my resume below 📄";
+  }
+  if(message.includes("contact")){
+    return "Email me at jamillasiason4@gmail.com 📩";
+  }
+
+  return "Thanks for your message 😊";
+}
+
+function sendMessage(){
+  const input = document.getElementById("chatInput");
+  const msgBox = document.getElementById("chatMessages");
+
+  if(input.value.trim() === "") return;
+
+  const userMsg = document.createElement("div");
+  userMsg.textContent = "You: " + input.value;
+  msgBox.appendChild(userMsg);
+
+  const reply = document.createElement("div");
+  reply.textContent = "Bot: " + getBotReply(input.value);
+  reply.style.color = "pink";
+
+  setTimeout(() => {
+    msgBox.appendChild(reply);
+    msgBox.scrollTop = msgBox.scrollHeight;
+  }, 500);
+
+  input.value = "";
+}
+</script>
+  </body>
 
   <!-- Footer -->
   <footer>
